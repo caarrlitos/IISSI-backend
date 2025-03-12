@@ -31,3 +31,25 @@ export default function RestaurantsScreen({ navigation }) {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  actionButton: {
+    borderRadius: 8,
+    height: 40,
+    marginTop: 12,
+    margin: '1%',
+    padding: 10,
+    alignSelf: 'center',
+    flexDirection: 'column',
+    width: '50%'
+  },
+  text: {
+    fontSize: 16,
+    color: 'white',
+    alignSelf: 'center',
+    marginLeft: 5
+  }
+})
