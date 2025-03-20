@@ -1,4 +1,4 @@
-import { Model } from 'sequelize'
+import { Model, Sequelize } from 'sequelize'
 const loadModel = (sequelize, DataTypes) => {
   class RestaurantCategory extends Model {
     /**
@@ -12,7 +12,11 @@ const loadModel = (sequelize, DataTypes) => {
     }
   }
   RestaurantCategory.init({
-    name: DataTypes.STRING,
+    name: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      unique: true
+      },
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,

@@ -2,6 +2,13 @@ import RestaurantCategoryController from '../controllers/RestaurantCategoryContr
 
 const loadFileRoutes = function (app) {
   app.route('/restaurantCategories')
-    .get(RestaurantCategoryController.index)
-}
+  .get(RestaurantCategoryController.index)
+  .post(
+  isLoggedIn,
+  hasRole('owner'),
+  RestaurantCategoryValidation.create,
+  handleValidation,
+  RestaurantCategoryController.create)
+  }
+  
 export default loadFileRoutes
